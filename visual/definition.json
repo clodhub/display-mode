@@ -1,10 +1,10 @@
 {
-  "id": "ourapps-ae.display-mode",
+  "id": "clodhub.display-mode",
   "name": "Display mode",
   "kind": "component",
   "status": "example",
-  "package": "ourapps-ae/display-mode",
-  "version": "0.11.0",
+  "package": "clodhub/display-mode",
+  "version": "0.12.0",
   "ports": [
     {
       "id": "display-mode-configuration",

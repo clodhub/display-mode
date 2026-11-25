@@ -1,6 +1,6 @@
 # Display mode instructions
 
-Package `ourapps-ae/display-mode` version `0.11.0`. It provides `display-policy` (type `ae/display-policy`, version 1.0.0) and optionally requires `display-mode-configuration` (type `ae/display-mode-configuration`, version 1.0.0).
+Package `clodhub/display-mode` version `0.12.0`. It provides `display-policy` (type `ae/display-policy`, version 1.0.0) and optionally requires `display-mode-configuration` (type `ae/display-mode-configuration`, version 1.0.0).
 
 ## For the agent
 
@@ -24,6 +24,6 @@ From the component directory:
 - `node --test tests/mode.test.mjs` (required)
 - `python3 scripts/check-native.py apple` (needs swiftc 6.4)
 - `python3 scripts/check-native.py android` (needs kotlinc and java 26.0; not runnable where kotlinc is missing)
-- `python3 -m aepm review <digest> --store STORE --policy POLICY --trusted --allow-network` checks an archive fetched with `python3 -m aepm fetch ourapps-ae/display-mode@VERSION --store STORE --from https://ourapps.app` and runs its suites.
+- `python3 -m aepm review <digest> --store STORE --policy POLICY --trusted --allow-network` checks an archive fetched with `python3 -m aepm fetch clodhub/display-mode@VERSION --store STORE --from https://clodhub.com` and runs its suites.
 
 In the application, switch to board mode and confirm that capture requests are refused, no private values render and the mode event fires once per change.
