@@ -18,13 +18,13 @@ There are no installer settings. The application gives two values in code when i
 Remembering the chosen mode between visits is up to the application.
 
 ## Artefacts and dependencies
-Every implementation file maps to `components/display-mode/` with its `implementation/` prefix removed: `web/mode.ts` and `web/index.ts`, `apple/Sources/DisplayPolicy.swift` and `android/src/main/java/ae/display/DisplayPolicy.kt`. SOURCE.md records where each file came from and SOURCE.json pins the source hashes. No runtime dependencies. `tools.lock.json` pins the check tools (Node 26.5, Python 3.12, Swift 6.4, Kotlin 2.2, Java 26.0).
+Every implementation file maps to `components/display-mode/` with its `implementation/` prefix removed: `web/mode.ts` and `web/index.ts`, `apple/Sources/DisplayPolicy.swift` and `android/src/main/java/com/clodhub/display/DisplayPolicy.kt`. SOURCE.md records where each file came from and SOURCE.json pins the source hashes. No runtime dependencies. `tools.lock.json` pins the check tools (Node 26.5, Python 3.12, Swift 6.4, Kotlin 2.2, Java 26.0).
 
 ## Provided interfaces
-`interfaces/display-policy.json` is an OpenRPC 1.3.2 document for `ae/display-policy` version 1.0.0: `createMode`, the returned handle's `ModeHandle.current` and `ModeHandle.publish`, and `displayCapabilities` (web), and `DisplayPolicy.canAct`, `canCapture` and `canSeePrivate` (Swift and Kotlin), with types as JSON Schema 2020-12.
+`interfaces/display-policy.json` is an OpenRPC 1.3.2 document for `com.clodhub/display-policy` version 1.0.0: `createMode`, the returned handle's `ModeHandle.current` and `ModeHandle.publish`, and `displayCapabilities` (web), and `DisplayPolicy.canAct`, `canCapture` and `canSeePrivate` (Swift and Kotlin), with types as JSON Schema 2020-12.
 
 ## Required interfaces
-`display-mode-configuration` (`ae/display-mode-configuration` version 1.0.0) is optional: the two values can be passed in code, so a design may leave it unconnected. `interfaces/required-display-mode-configuration.json` is the JSON Schema 2020-12 document of its fields, `initial` and `eventName`.
+`display-mode-configuration` (`com.clodhub/display-mode-configuration` version 1.0.0) is optional: the two values can be passed in code, so a design may leave it unconnected. `interfaces/required-display-mode-configuration.json` is the JSON Schema 2020-12 document of its fields, `initial` and `eventName`.
 
 ## Integration
 Create the mode once when the application starts and publish the starting mode before anything can capture media:

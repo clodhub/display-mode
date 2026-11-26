@@ -1,17 +1,17 @@
 {
-  "id": "clodhub.display-mode",
+  "id": "com.clodhub.display-mode",
   "name": "Display mode",
   "kind": "component",
   "status": "example",
-  "package": "clodhub/display-mode",
-  "version": "0.12.0",
+  "package": "pkg:clod/com.clodhub/display-mode",
+  "version": "0.13.0",
   "ports": [
     {
       "id": "display-mode-configuration",
       "name": "Host configuration",
       "direction": "input",
       "kind": "interface",
-      "type": "ae/display-mode-configuration",
+      "type": "com.clodhub/display-mode-configuration",
       "version": "1.0.0",
       "required": false,
       "cardinality": "one"
@@ -21,7 +21,7 @@
       "name": "Display mode",
       "direction": "output",
       "kind": "interface",
-      "type": "ae/display-policy",
+      "type": "com.clodhub/display-policy",
       "version": "1.0.0"
     }
   ],

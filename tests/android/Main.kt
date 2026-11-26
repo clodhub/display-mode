@@ -1,4 +1,4 @@
-import ae.display.DisplayPolicy
+import com.clodhub.display.DisplayPolicy
 
 fun main() {
     for (display in listOf(true, false)) {

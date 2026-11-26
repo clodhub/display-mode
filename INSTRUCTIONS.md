@@ -1,6 +1,6 @@
 # Display mode instructions
 
-Package `clodhub/display-mode` version `0.12.0`. It provides `display-policy` (type `ae/display-policy`, version 1.0.0) and optionally requires `display-mode-configuration` (type `ae/display-mode-configuration`, version 1.0.0).
+Package `pkg:clod/com.clodhub/display-mode` version `0.13.0`. It provides `display-policy` (type `com.clodhub/display-policy`, version 1.0.0) and optionally requires `display-mode-configuration` (type `com.clodhub/display-mode-configuration`, version 1.0.0).
 
 ## For the agent
 
@@ -13,7 +13,7 @@ Package `clodhub/display-mode` version `0.12.0`. It provides `display-policy` (t
 
 - Web: `components/display-mode/web/mode.ts`. Call `createMode(initial, eventName)` once per session and call `publish(initial)` before any capture. `publish` sets `document.documentElement.dataset.mode` and then dispatches `CustomEvent(eventName, {detail: {mode}})`. `current()` reads the mode. `displayCapabilities(display)` returns `{canAct, canCapture, canSeePrivate}`, all false when `display` is true.
 - Apple: `components/display-mode/apple/Sources/DisplayPolicy.swift` has `DisplayPolicy.canAct`, `canCapture` and `canSeePrivate`.
-- Android: `components/display-mode/android/src/main/java/ae/display/DisplayPolicy.kt` has `ae.display.DisplayPolicy` with the same three functions.
+- Android: `components/display-mode/android/src/main/java/com/clodhub/display/DisplayPolicy.kt` has `com.clodhub.display.DisplayPolicy` with the same three functions.
 - Call the policy at each action and media boundary. This component does not authenticate anyone and does not hide data on the server; the room service must redact private views itself.
 - Persistence of the chosen mode belongs to you.
 
@@ -24,6 +24,6 @@ From the component directory:
 - `node --test tests/mode.test.mjs` (required)
 - `python3 scripts/check-native.py apple` (needs swiftc 6.4)
 - `python3 scripts/check-native.py android` (needs kotlinc and java 26.0; not runnable where kotlinc is missing)
-- `python3 -m aepm review <digest> --store STORE --policy POLICY --trusted --allow-network` checks an archive fetched with `python3 -m aepm fetch clodhub/display-mode@VERSION --store STORE --from https://clodhub.com` and runs its suites.
+- `python3 -m clod review <digest> --store STORE --policy POLICY --trusted --allow-network` checks an archive fetched with `python3 -m clod fetch display-mode@VERSION --store STORE --from https://clodhub.com` and runs its suites.
 
 In the application, switch to board mode and confirm that capture requests are refused, no private values render and the mode event fires once per change.

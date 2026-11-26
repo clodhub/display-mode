@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "title": "ae/display-mode-configuration",
+  "title": "com.clodhub/display-mode-configuration",
   "x-version": "1.0.0",
   "description": "The application's arguments to createMode. Persistence and authentication belong to the application.",
   "type": "object",
